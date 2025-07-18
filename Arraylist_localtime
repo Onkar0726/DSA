@@ -1,0 +1,86 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.time.LocalTime;
+import java.time.LocalDate;
+
+class SUV {
+    ArrayList<Integer> tyreNos = new ArrayList<>(); 
+    ArrayList<Integer> engineCaps = new ArrayList<>();
+
+    public SUV() { 
+        tyreNos.add(4);
+        engineCaps.add(1200);
+    }
+}
+
+class Sedan {
+    ArrayList<Integer> tyreNos = new ArrayList<>();
+    ArrayList<Integer> engineCaps = new ArrayList<>();
+
+    public Sedan() {
+        tyreNos.add(4);
+        engineCaps.add(1600);
+    }
+}
+
+class MPV {
+    ArrayList<Integer> tyreNos = new ArrayList<>();
+    ArrayList<Integer> engineCaps = new ArrayList<>();
+
+    public MPV() {
+        tyreNos.add(4);
+        engineCaps.add(2000);
+    }
+}
+
+class Hatchback {
+    ArrayList<Integer> tyreNos = new ArrayList<>();
+    ArrayList<Integer> engineCaps = new ArrayList<>();
+
+    public Hatchback() {
+        tyreNos.add(4);
+        engineCaps.add(2200);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        LocalDate dt =LocalDate.now();
+     System.out.println(dt);
+     LocalTime obj = LocalTime.now();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the car type (SUV, Sedan, MPV, Hatchback):");
+        String carType = sc.next();
+
+        switch (carType.toLowerCase()) {
+            case "suv":
+                SUV s1 = new SUV();
+                System.out.println("SUV Tyre No: " + s1.tyreNos.get(0));
+                System.out.println("SUV Engine Capacity: " + s1.engineCaps.get(0));
+                break;
+            case "sedan":
+                Sedan s2 = new Sedan();
+                System.out.println("Sedan Tyre No: " + s2.tyreNos.get(0));
+                System.out.println("Sedan Engine Capacity: " + s2.engineCaps.get(0));
+                break;
+            case "mpv":
+                MPV s3 = new MPV();
+                System.out.println("MPV Tyre No: " + s3.tyreNos.get(0));
+                System.out.println("MPV Engine Capacity: " + s3.engineCaps.get(0));
+                break;
+            case "hatchback":
+                Hatchback s4 = new Hatchback();
+                System.out.println("Hatchback Tyre No: " + s4.tyreNos.get(0));
+                System.out.println("Hatchback Engine Capacity: " + s4.engineCaps.get(0)); // Completed line
+                break;
+            default:
+                System.out.println("Invalid car type entered.");
+                break;
+        }
+        LocalTime obj1 = LocalTime.now();
+   System.out.println(obj1);
+
+        sc.close(); 
+    }
+}
