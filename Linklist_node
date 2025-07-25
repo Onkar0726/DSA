@@ -1,0 +1,50 @@
+import java.util.*;
+
+class Node {
+    String data;
+    Node next;
+
+    Node(String data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+class Linked {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        LinkedList<String> list = new LinkedList<>();
+        Node head = null;
+        System.out.println("Enter element to add in linklist ");
+        Node current = null;
+        for (int i = 0; i < 6; i++) {
+            System.out.println("Element" + (i + 1));
+            String element = sc.nextLine();
+            list.add(element);
+
+            Node newNode = new Node(element);
+            if (head == null) {
+                head = newNode;
+                current = head;
+            } else {
+                current.next = newNode;
+                current = current.next;
+            }
+        }
+
+        System.out.println(list);
+
+        System.out.println("Enter element which you want to delete");
+        String ele = sc.nextLine();
+        for (int j = 0; j < list.size(); j++) {
+          if (list.get(j).equals(ele)){
+                list.remove(j);
+              System.out.println("new elements are "+list);
+                break;
+            }
+            if (list.contains(ele)== false) {
+                System.out.println("entered element is not in the linkedlist.");
+                break;
+            }
+            }
+        }
+    }
