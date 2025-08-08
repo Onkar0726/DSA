@@ -16,18 +16,17 @@ public class queue {
     }
     public void dequeue() {
         try {
-            if ( F >= R) {
+            if (F >= R || F == -1 && R==-1) {
                 System.out.println("Queue Underflow");
                 return;
             }
             F++;
             System.out.println("Dequeue" + arr[F]);
-        }
-        catch (Exception e) {
-            System.out.println("Exception occurred during dequeue: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Exception dequeue: " + e.getMessage());
         }
     }
-    public void displayQueue() {
+    public void display() {
         if (F == R) {
             System.out.println("Queue is empty");
             return;
@@ -45,10 +44,11 @@ public static void main(String[] args) {
         q.enqueue(30);
         q.enqueue(40);
         q.enqueue(50);
-//        q.dequeue();
-//        q.dequeue();
-//        q.dequeue();
-//        q.dequeue();
-        q.displayQueue();
+        q.dequeue();
+        q.dequeue();
+        q.dequeue();
+        q.dequeue();
+        q.dequeue();
+        q.display();
     }
 }
