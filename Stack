@@ -1,0 +1,95 @@
+import java.util.*;
+class ss {
+int top = -1;
+int size = 5;
+int[] stack = new int[size];
+void push(int value) {
+if (top == size - 1) {
+System.out.println("stack is full");
+} else {
+top++;
+stack[top] = value;
+System.out.print(value);
+}
+}
+int pop() {
+if (top >= 0) {
+int popped = stack[top];
+System.out.println("stack popped " +
+popped);
+top--;
+return popped;
+} else {
+System.out.println("stack is empty");
+return -1;
+}
+}
+int peek() {
+if (top >= 0) {
+return stack[top];
+} else {
+System.out.println("stack is empty");
+return -1;
+
+Data Structures 2025-2026
+
+}
+}
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+stack1 s = new stack1();
+while (true) {
+System.out.println("\nChoose
+operation:");
+System.out.println("1. Push");
+System.out.println("2. Pop");
+System.out.println("3. Peek");
+System.out.println("4. Display");
+System.out.println("5. Exit");
+System.out.print("Enter your choice: ");
+int choice = sc.nextInt();
+if (choice == 1) {
+System.out.print("Enter value to push:
+");
+int val = sc.nextInt();
+s.push(val);
+for (int i = 0; i <= s.top; i++) {
+System.out.println("stack after push " +
+s.stack[i]);
+}
+} else if (choice == 2) {
+System.out.print("Press Enter to pop:
+");
+sc.nextLine(); // clear input buffer
+sc.nextLine(); // wait for Enter
+s.pop();
+for (int i = 0; i <= s.top; i++) {
+System.out.println("stack after pop " +
+s.stack[i]);
+}
+} else if (choice == 3) {
+int peeked = s.peek();
+if (peeked != -1) {
+System.out.println("Peeked element: " +
+peeked);
+}
+} else if (choice == 4) {
+if (s.top == -1) {
+System.out.println("stack is empty");
+} else {
+for (int i = 0; i <= s.top; i++) {
+System.out.println("stack element: " +
+s.stack[i]);
+
+Output: (Paste Screenshot)
+}
+}
+} else if (choice == 5) {
+System.out.println("Exiting...");
+break;
+} else {
+System.out.println("Invalid choice");
+}
+}
+}
+}
